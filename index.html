@@ -126,27 +126,16 @@
             margin-top: 10px;
             margin-left: 100px;
         }
-        .typing::after {
-            color: red;
-            content: "|"; 
-            animation: blink 0.7s infinite; 
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
+        
+       
         #club-container{
             width: 100vw;
             height: 230vh;
             background-color: white;
         }
         .main-2 {
-          
-            /* height: 100vh; */
-            width: calc(100% - 10vw); /* Considering the 4vw margin on both sides */
-            margin: 0 5vw; /* Adding 4vw margin on left and right */
+            width: calc(100% - 10vw); 
+            margin: 0 5vw; 
             color: rgb(31, 47, 61);
             background-color: white;
             display: flex;
@@ -202,40 +191,23 @@
        
         
     }
-    .loader::before
-    {
-        content:' ';
-        position: absolute;
-        top:0;
-        right: 0;
-        width: 2px;
-        height: 100%;
-        background: red;
-        animation: blinkCursor 0.8s steps(3) infinite;
-    }
-    @keyframes blinkCursor{
-        0%,75%{
-            opacity: 1;
-        }
-        76%,100%{
-           opacity: 0; 
-        }
-    }
+   
+   
     .loader h2{
         position: relative;
         color: red;
         letter-spacing: 5px;
         font-size: 2em;  
-        /* animation: typing 2s  infinite; */
-        animation: typing 2.5s infinite , cursor 2s step-end infinite alternate;
+       
+        animation: typing 2.5s infinite ;
         overflow: hidden;
     }
     @keyframes typing{
-        0%,90%,100%
+        from
         {
             width: 0;
         }
-        30%,60%
+        to
         {
             width:390px;
         }

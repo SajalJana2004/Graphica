@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Ait</title>
+    <script src="https://kit.fontawesome.com/5f819c81df.js" crossorigin="anonymous"></script>
+  
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("your-new-background-image.jpg") no-repeat;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            
+        }
+        .heading{
+            display: flex;
+        }
+        .heading h1 {
+            padding-left: 80px;
+            font-size: 32px;
+            margin-top: 23px;
+        }
+        .main-nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 15px 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0);
+            transition: background-color 0.3s ease;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .main-nav li {
+            margin: 0 15px;
+        }
+
+        .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: #ff4500;
+        }
+
+        .image img {
+            border-radius: 50%;
+            height: 180px;
+            width: 180px;
+            position: absolute;
+            top: 190px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .name h1 {
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff4500;
+            font-size: 36px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding: 20px; */
+            text-align: center;
+             margin-top: -200px;
+        }
+
+        .club p {
+            width: 70%;
+            margin: auto;
+            color: black;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            top: 50px;
+        }
+
+        .social-menu {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 200;
+        }
+
+        .social-menu ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .social-menu ul li {
+            margin: 10px 0;
+        }
+
+        .social-menu ul li a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align: center;
+            line-height: 50px;
+            color: #000;
+            font-size: 20px;
+            transition: 0.5s;
+            box-shadow: 0 7px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-menu ul li a:hover {
+            transform: rotate(0deg) skew(0deg) translate(0, -10px);
+        }
+
+        .social-menu ul li:nth-child(1) a:hover {
+            background-color: #3b5999;
+            color: #fff;
+        }
+
+        .social-menu ul li:nth-child(2) a:hover {
+            background-color: #55acee;
+            color: #fff;
+        }
+
+        .social-menu ul li:nth-child(3) a:hover {
+            background-color: #e4405f;
+            color: #fff;
+        }
+
+        .social-menu ul li:nth-child(4) a:hover {
+            background-color: #cd201f;
+            color: #fff;
+        }
+
+        .social-menu ul li:nth-child(5) a:hover {
+            background-color: #0077B5;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="social-menu">
+        <ul>
+          <li><a href="https://www.facebook.com/fodoai/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://www.twitter.com/fodoai" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/fodo.ai/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com/fodoai" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/fodoai/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-nav">
+            <div class="heading">
+                <img src="AIT.svg" alt=""  style="height: 100px;">
+                <h1>Army Institute Of Technology</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#sectionB">About</a></li>
+                <li><a href="#sectionC">Services</a></li>
+                <li><a href="#sectionD">Skills</a></li>
+                <li><a href="#sectionE">Teams</a></li>
+                <li><a href="#sectionF">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="image">
+        <img src="Assets/cear.png" alt="Profile Image">
+    </div>
+    <div class="name">
+        <h1>CEAR Club</h1>
+    </div>
+    <div class="container">
+        <div class="club">
+            <p>Our club is a community of passionate individuals who share a common interest in robotics and technology. We believe in the power of robotics to change the world and we strive to explore, innovate and make a difference.
+
+                Our members come from diverse backgrounds and skill levels, ranging from hobbyists to seasoned professionals. We offer a collaborative and supportive environment where members can learn, share ideas, and develop their skills in robotics.
+                
+                As a club, we are committed to advancing the field of robotics through various projects, events, and competitions. We believe that by working together, we can push the boundaries of robotics and make a positive impact on society.
+            </p>   
+        </div>
+    </div>
+    <footer>
+        &copy; 2023 Your Club Name
+    </footer>
+</body>
+</html>

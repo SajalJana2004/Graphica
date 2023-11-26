@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            
+            font-family: 'Ubuntu', sans-serif;
+            background-color: black;
+        }
+        .main {
+            height: 100vh;
+            width: 100%;
+        
+        }
+        .heading h1 {
+            
+            font-weight: 900;
+            padding-left: 80px;
+            color: red;
+            font-size: 32px;
+            margin-top: 23px;
+        }
+        .main-nav{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            font-size: 21px;
+            font-weight: 900;
+            padding-bottom: 5px;
+            z-index: 1000;
+            background-color: black;
+            transition: background-color 0.3s ease; 
+        }
+        .navbar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(126, 105, 105);
+            opacity: 0;
+            pointer-events: none; 
+            transition: opacity 0.3s ease; 
+        }
+        .main-nav::-webkit-scrollbar{
+            background-color: red;
+        }
+        .navbar {
+            font-size: 21px;
+            font-weight: 900;
+            position: absolute;
+            top: 27px;
+            right: 27px;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .navbar li {
+            margin: 0 15px;
+        }
+        .navbar li a {
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .navbar li a:hover {
+            color: red;
+        }
+        .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content:left;
+            align-items: left;
+            color: aliceblue;
+            text-align: left;
+            margin-top: 10vh;
+            margin-top: 240px;
+        }
+        .box {
+            display: inline-block;
+            padding: 17px 22px;
+            height: 60px;
+            width: 135px;
+            background-color: red;
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 65px;
+            border-radius: 5px;
+            margin-left: 100px;
+            font-size: 21px;
+            
+            
+        }
+        .box:hover {
+            border: 1px solid red; 
+            color: red;            
+            background-color: black;  
+            transition: all 0.3s ease; 
+        }
+
+        .text-1{
+            font-size: 35px;
+            margin-bottom: 0px;
+            font-weight: 200;
+            margin-left: 100px;
+        }
+        .text-2{
+            font-size: 70px;
+            margin-left: 100px;
+            
+            font-weight: 900;
+        }
+        .text-3{
+            font-weight: 900;
+            font-size: 35px;
+            margin-top: 10px;
+            margin-left: 100px;
+        }
+        .typing::after {
+            color: red;
+            content: "|"; 
+            animation: blink 0.7s infinite; 
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        #club-container{
+            width: 100vw;
+            height: 230vh;
+            background-color: white;
+        }
+        .main-2 {
+          
+            /* height: 100vh; */
+            width: calc(100% - 10vw); /* Considering the 4vw margin on both sides */
+            margin: 0 5vw; /* Adding 4vw margin on left and right */
+            color: rgb(31, 47, 61);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+       .main-2 h1{
+        margin: auto;
+        font-size: 60px;
+        margin-top: 70px;
+        margin-bottom: 10px;
+        color: red;
+       }
+       .line{
+        width: 80px;
+        border:3px solid #0d2691;
+        position: relative;
+        display:block;
+        margin:auto;
+        margin-bottom: 60px;
+        }
+        .club-bg{
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        .club{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .club img{
+            height: 200px;
+            width: 200px;
+            /* border-radius: 50%; */
+            transition: 0.3s ease-in-out;
+        }
+        .club img:hover{
+            scale: 1.2;
+        }
+        .loader{
+        position: relative;
+        -webkit-box-reflect: below -18px linear-gradient(transparent,rgba(64, 63, 63, 0.8));
+        background-color: black;
+       
+        
+    }
+    .loader::before
+    {
+        content:' ';
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: red;
+        animation: blinkCursor 0.8s steps(3) infinite;
+    }
+    @keyframes blinkCursor{
+        0%,75%{
+            opacity: 1;
+        }
+        76%,100%{
+           opacity: 0; 
+        }
+    }
+    .loader h2{
+        position: relative;
+        color: red;
+        letter-spacing: 5px;
+        font-size: 2em;  
+        /* animation: typing 2s  infinite; */
+        animation: typing 2.5s infinite , cursor 2s step-end infinite alternate;
+        overflow: hidden;
+    }
+    @keyframes typing{
+        0%,90%,100%
+        {
+            width: 0;
+        }
+        30%,60%
+        {
+            width:390px;
+        }
+    }
+    .club h4{
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main-nav">
+                <div class="heading">
+                    <h1>Visit Ait</h1>
+                </div>
+            <ul class="navbar">
+                <li><a href="#sectionA">Home</a></li>
+                <li><a href="#sectionB">About</a></li>
+                <li><a href="#sectionC">Services</a></li>
+                <li><a href="#sectionD">Skills</a></li>
+                <li><a href="#sectionE">Teams</a></li>
+                <li><a href="#sectionF">Contact</a></li>
+            </ul>
+        </div>
+            
+            <div class="intro">
+                
+                <h1 class="text-2">IN IT TO LEARN IT...</h1>
+                <div class="text-3">Welcome to
+                    <span><div class="loader">
+                        <h2>AIT_Clubs</h2>
+                    </div></span></div>
+               
+                <a href="#sectionB" class="box">Join us</a>
+            </div>
+            <div class="description" style="display: flex;flex-direction: column; align-items: center;">
+                <div class="heading-home">
+                    <h1 style="font-size: 35px;color: white;margin-top: 50px;align-items: center;">The only place where work 
+                    </h1>
+                    <h1 style="font-size: 35px;color: white;align-items: center; text-align: center;">and</h1> 
+                    <h1 style="font-size: 35px;color: white;align-items: center;">
+                    &nbsp; &nbsp;&nbsp;   play go hand in hand</h1>
+                </div>
+               
+            </div>
+    </div>
+    <section id="club-container">
+    <div class="main-2" >
+        <h1>Clubs</h1>
+        <div class="line"></div>
+        <div class="club-bg">
+
+            <div class="club">
+                <div class="img">
+                    <a href="techboard.html"> <img src="Assets/tb.png"  alt=""></a>
+                   
+                </div>
+                <h4>TECHNICAL-BOARD</h4>
+            </div>
+
+            <div class="club">
+                <div class="img">
+                    <a href="cult.html">
+                        <img src="Assets/cult.png"  alt=""></a>
+                </div><h4>CULTUTRAL-BOARD</h4>
+            </div>
+            <div class="club"> 
+
+                <div class="img">
+                    <a href="sports.html"><img src="Assets/sports.png"  alt=""></a>
+                    
+                </div>
+                <h4>Sports club</h4></div>
+                
+                <div class="club"><div class="img"><a href="oss.html">
+                    <img src="Assets/oss-removebg-preview.png"  alt=""></a>
+                </div><h4>OSS club</h4></div>
+            <div class="club"><div class="img">
+                <a href="cear.html">
+                    <img src="Assets/cear.png"  alt=""></a>
+                </div><h4>COE:AI & Robotics </h4></div>
+            <div class="club"><div class="img">
+                <a href="ecell.html">
+                    <img src="Assets/ecell.png"  alt=""></a>
+                </div><h4>E-cell</h4></div>
+            <div class="club"><div class="img">
+                <a href="fine arts.html">
+                    <img src="Assets/fine arts-fotor-20231126115728.png"  alt=""></a>
+                </div><h4>Fine arts Club</h4></div>
+            <div class="club"><div class="img">
+                <a href="rnd.html"> <img src="Assets/r and d.png"  alt=""></a>  
+                </div><h4>Research & Development club</h4></div>
+            <div class="club"><div class="img">
+                <a href="magboard.html"><img src="Assets/magboard-fotor-2023112612423.png"  alt=""></a>
+                </div><h4>Magazine Board</h4></div>
+            <div class="club"><div class="img">
+                <a href="nss.html"></a>
+                    <img src="Assets/nss-fotor-2023112612454.png"  alt="">
+                </div><h4>NSS club</h4></div>
+            <div class="club"><div class="img">
+                <a href="maths.html"></a>
+                    <img src="Assets/maths-fotor-2023112612046.png"  alt="">
+                </div><h4>Maths club</h4></div>
+            <div class="club"><div class="img">
+                <a href="ddq.html"></a>
+                    <img src="Assets/ddq-fotor-20231126115622.png"  alt="">
+                </div><h4>Dramatics & Quiz</h4></div>
+            <div class="club"><div class="img">
+                <a href="spiritual.html"><img src="Assets/spiritual club.png"  alt=""></a>   
+                </div><h4>Spiritual club</h4></div>
+            <div class="club"><div class="img">
+                <a href="nature.html"><img src="Assets/nature.png"  alt=""></a>   
+                </div><h4>Nature club</h4></div>
+            <div class="club"><div class="img">
+                <a href="radio.html"> <img src="Assets/radio.png"  alt=""></a>  
+                </div><h4>Radio club</h4></div>
+            <div class="club"><div class="img">
+                <a href="cp.html"><img src="Assets/cp.png"  alt=""></a>    
+                </div><h4>Programming club</h4></div>
+            <div class="club"><div class="img">
+                <a href="isdf.html"><img src="Assets/isdf-fotor-2023112612252.png"  alt=""></a> 
+                </div><h4>ISDF club</h4></div>
+            <div class="club"><div class="img">
+                <a href="ev.html"><img src="Assets/ev.png"  alt=""></a>
+                </div><h4>EV Cell</h4></div>
+            <div class="club"><div class="img">
+                <a href="cycle.html"><img src="Assets/cycling.png"  alt=""></a>
+                </div><h4>Cycling club</h4></div>
+            <div class="club"><div class="img">
+                <a href="arvr.html"><img src="Assets/arvr.png"  alt=""></a>
+                </div><h4>AR/VR club</h4></div>
+            
+        </div>
+       
+    </div>
+</section>
+    <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <p>Contact: kakalijana1254@gmail.com</p>
+    </footer>
+    
+   
+</html>
